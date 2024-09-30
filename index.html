@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" type="image/png" href="img/icon.png" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Ecobank | La Banque pour un avenir meilleur</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <img
+          src="img/logo2.png"
+          alt="Ecobank logo"
+          class="nav__logo"
+          id="logo"
+        />
+        <ul class="nav__links">
+          <li class="nav__item">
+            <a class="nav__link" href="#section--1">Caractéristiques</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#section--2">Services</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#section--3">Témoignages</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link nav__link--btn btn--show-modal" href="#"
+              >Ouvrir un compte</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header__title">
+        <h1>
+          Quand
+          <!-- Green highlight effect -->
+          <span class="highlight">la banque</span>
+          rencontre<br />
+          <span class="highlight">l'avenir</span>
+        </h1>
+        <h4>Une expérience bancaire simplifiée pour un avenir meilleur.</h4>
+        <button class="btn--text btn--scroll-to">
+          En savoir plus &DownArrow;
+        </button>
+        <img
+          src="img/hero-ecobank.png"
+          class="header__img"
+          alt="Services bancaires modernes"
+        />
+      </div>
+    </header>
+
+    <section class="section" id="section--1">
+      <div class="section__title">
+        <h2 class="section__description">Caractéristiques</h2>
+        <h3 class="section__header">
+          Tout ce dont vous avez besoin dans une banque moderne et plus encore.
+        </h3>
+      </div>
+
+      <div class="features">
+        <img
+          src="img/digital-lazy.jpg"
+          data-src="img/digital.jpg"
+          alt="Services bancaires digitaux"
+          class="features__img lazy-img"
+        />
+        <div class="features__feature">
+          <div class="features__icon">
+            <svg>
+              <use xlink:href="img/icons.svg#icon-monitor"></use>
+            </svg>
+          </div>
+          <h5 class="features__header">100% banque digitale</h5>
+          <p>
+            Gérez vos finances n'importe où, à tout moment, en toute sécurité.
+          </p>
+        </div>
+
+        <div class="features__feature">
+          <div class="features__icon">
+            <svg>
+              <use xlink:href="img/icons.svg#icon-trending-up"></use>
+            </svg>
+          </div>
+          <h5 class="features__header">Voyez vos économies croître</h5>
+          <p>
+            Avec des taux compétitifs et des conseils d'investissement adaptés à
+            vos besoins.
+          </p>
+        </div>
+        <img
+          src="img/grow-lazy.jpg"
+          data-src="img/grow.jpg"
+          alt="Croissance financière"
+          class="features__img lazy-img"
+        />
+
+        <img
+          src="img/card-lazy.jpg"
+          data-src="img/card.jpg"
+          alt="Carte de crédit"
+          class="features__img lazy-img"
+        />
+        <div class="features__feature">
+          <div class="features__icon">
+            <svg>
+              <use xlink:href="img/icons.svg#icon-credit-card"></use>
+            </svg>
+          </div>
+          <h5 class="features__header">Carte de débit gratuite incluse</h5>
+          <p>
+            Simplifiez vos achats avec notre carte de débit gratuite et des
+            frais de gestion réduits.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="section--2">
+      <div class="section__title">
+        <h2 class="section__description">Services</h2>
+        <h3 class="section__header">Simplicité et rapidité, tout en un.</h3>
+      </div>
+
+      <div class="operations">
+        <div class="operations__tab-container">
+          <button
+            class="btn operations__tab operations__tab--1 operations__tab--active"
+            data-tab="1"
+          >
+            <span>01</span>Transferts Instantanés
+          </button>
+          <button class="btn operations__tab operations__tab--2" data-tab="2">
+            <span>02</span>Prêts Immédiats
+          </button>
+          <button class="btn operations__tab operations__tab--3" data-tab="3">
+            <span>03</span>Clôture Immédiate
+          </button>
+        </div>
+        <div
+          class="operations__content operations__content--1 operations__content--active"
+        >
+          <div class="operations__icon operations__icon--1">
+            <svg>
+              <use xlink:href="img/icons.svg#icon-upload"></use>
+            </svg>
+          </div>
+          <h5 class="operations__header">
+            Transférez de l'argent instantanément, sans frais.
+          </h5>
+          <p>
+            Envoyez de l'argent rapidement et en toute sécurité, où que vous
+            soyez.
+          </p>
+        </div>
+
+        <div class="operations__content operations__content--2">
+          <div class="operations__icon operations__icon--2">
+            <svg>
+              <use xlink:href="img/icons.svg#icon-home"></use>
+            </svg>
+          </div>
+          <h5 class="operations__header">
+            Réalisez vos rêves avec des prêts instantanés.
+          </h5>
+          <p>
+            Obtenez un prêt en quelques clics pour financer vos projets
+            personnels ou professionnels.
+          </p>
+        </div>
+        <div class="operations__content operations__content--3">
+          <div class="operations__icon operations__icon--3">
+            <svg>
+              <use xlink:href="img/icons.svg#icon-user-x"></use>
+            </svg>
+          </div>
+          <h5 class="operations__header">
+            Plus besoin de votre compte ? Clôturez-le immédiatement.
+          </h5>
+          <p>
+            Vous pouvez fermer votre compte à tout moment, sans frais cachés.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="section--3">
+      <div class="section__title section__title--testimonials">
+        <h2 class="section__description">Toujours indécis ?</h2>
+        <h3 class="section__header">
+          Des millions de clients font déjà confiance à Ecobank.
+        </h3>
+      </div>
+
+      <div class="slider">
+        <div class="slide slide--1">
+          <div class="testimonial">
+            <h5 class="testimonial__header">
+              La meilleure décision financière !
+            </h5>
+            <blockquote class="testimonial__text">
+              Ecobank a changé ma manière de gérer mes finances, tout est plus
+              simple maintenant.
+            </blockquote>
+            <address class="testimonial__author">
+              <img src="img/user-1.jpg" alt="" class="testimonial__photo" />
+              <h6 class="testimonial__name">Aarav Lynn</h6>
+              <p class="testimonial__location">San Francisco, USA</p>
+            </address>
+          </div>
+        </div>
+
+        <div class="slide slide--2">
+          <div class="testimonial">
+            <h5 class="testimonial__header">
+              Le dernier pas vers une vie minimaliste
+            </h5>
+            <blockquote class="testimonial__text">
+              Grâce à Ecobank, mes finances sont parfaitement organisées.
+            </blockquote>
+            <address class="testimonial__author">
+              <img src="img/user-2.jpg" alt="" class="testimonial__photo" />
+              <h6 class="testimonial__name">Miyah Miles</h6>
+              <p class="testimonial__location">Londres, Royaume-Uni</p>
+            </address>
+          </div>
+        </div>
+
+        <div class="slide slide--3">
+          <div class="testimonial">
+            <h5 class="testimonial__header">
+              Enfin libre des banques traditionnelles !
+            </h5>
+            <blockquote class="testimonial__text">
+              Avec Ecobank, tout est plus rapide, sécurisé et sans frais
+              inutiles.
+            </blockquote>
+            <address class="testimonial__author">
+              <img src="img/user-3.jpg" alt="" class="testimonial__photo" />
+              <h6 class="testimonial__name">Francisco Gomes</h6>
+              <p class="testimonial__location">Lisbonne, Portugal</p>
+            </address>
+          </div>
+        </div>
+        <button class="slider__btn slider__btn--left">&larr;</button>
+        <button class="slider__btn slider__btn--right">&rarr;</button>
+        <div class="dots"></div>
+      </div>
+    </section>
+
+    <section class="section section--sign-up">
+      <div class="section__title">
+        <h3 class="section__header">
+          Le meilleur jour pour rejoindre Ecobank, c'était hier. Le deuxième
+          meilleur, c'est aujourd'hui !
+        </h3>
+      </div>
+      <button class="btn btn--show-modal">
+        Ouvrez votre compte gratuit dès aujourd'hui !
+      </button>
+    </section>
+
+    <footer class="footer">
+      <ul class="footer__nav">
+        <li class="footer__item">
+          <a class="footer__link" href="#">À propos</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Tarifs</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Conditions d'utilisation</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Politique de confidentialité</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Carrières</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Blog</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Nous contacter</a>
+        </li>
+      </ul>
+      <img src="img/logo.png" alt="Logo Ecobank" class="footer__logo" />
+      <p class="footer__copyright">
+        &copy; Copyright by Ecobank. Tous droits réservés.
+      </p>
+    </footer>
+
+    <div class="modal hidden">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header">
+        Ouvrez votre compte bancaire <br />
+        en seulement <span class="highlight">5 minutes</span>
+      </h2>
+      <form class="modal__form">
+        <label>Prénom</label>
+        <input type="text" />
+        <label>Nom</label>
+        <input type="text" />
+        <label>Adresse e-mail</label>
+        <input type="email" />
+        <button class="btn">Étape suivante &rarr;</button>
+      </form>
+    </div>
+    <div class="overlay hidden"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
