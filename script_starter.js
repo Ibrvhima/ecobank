@@ -71,17 +71,21 @@ btnScrollTo.addEventListener('click', function (e) {
   // window.scrollTo(
   //   s1Coord.left + window.pageXOffset ,
   //   s1Coord.top + window.pageYOffset,
-    
+
   // );
 
-  section1.scrollIntoView({behavior: 'smooth'})
+  section1.scrollIntoView({ behavior: 'smooth' });
 });
 
- const h1 = document.querySelector('h1')
-h1.addEventListener('mouseenter', function(){
-  alert('addEventListener: Great! you are reading the headding😊')
-})
+const h1 = document.querySelector('h1');
+h1.addEventListener('mouseenter', function (e) {
+  alert('addEventListener: Great! you are reading the headding');
+});
 
+h1.onmouseenter = alertH1;
+h1.onmouseenter = function (e) {
+  alert('👍');
+};
 
 //MANIPULATION DES ATTRIBUT CLASSE
 
