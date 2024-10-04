@@ -68,28 +68,53 @@ btnScrollTo.addEventListener('click', function (e) {
     document.documentElement.clientHeight,
     document.documentElement.clientWidth
   );
-  // window.scrollTo(
-  //   s1Coord.left + window.pageXOffset ,
-  //   s1Coord.top + window.pageYOffset,
+});
+// window.scrollTo(
+//   s1Coord.left + window.pageXOffset ,
+//   s1Coord.top + window.pageYOffset,
 
-  // );
+// );
 
-  section1.scrollIntoView({ behavior: 'smooth' });
+//////////////////////// GESTION DU SCROLL
+//   section1.scrollIntoView({ behavior: 'smooth' });
+// });
+
+// const h1 = document.querySelector('h1');
+// h1.addEventListener('mouseenter', function (e) {
+//   alert('addEventListener: Great! you are reading the headding');
+// });
+
+// h1.onmouseenter = alertH1;
+// h1.onmouseenter = function (e) {
+//   alert('👍');
+// };
+
+////// CHANGEMENT DE COULEUR SUR NOS LIENS
+//rgb(255,255,255)
+const radomInt = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1) + min);
+const randomColor = () =>
+  `rgb(${radomInt(0, 255)}, ${radomInt(0, 255)},${radomInt(0, 255)})`;
+console.log(randomColor());
+
+document.querySelector('.nav__link').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+  console.log('LINK', e.target);
 });
 
-const h1 = document.querySelector('h1');
-h1.addEventListener('mouseenter', function (e) {
-  alert('addEventListener: Great! you are reading the headding');
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+  this.backgroundColor = randomColor();
+  console.log('LINKS', e.target);
 });
 
-h1.onmouseenter = alertH1;
-h1.onmouseenter = function (e) {
-  alert('👍');
-};
+document.querySelector('.nav').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+  console.log('NAV', e.target);
+});
 
 //MANIPULATION DES ATTRIBUT CLASSE
 
-// //document.documentElement.style.setProperty("--color-primary", "orange")
+//document.documentElement.style.setProperty("--color-primary", "orange")
 
 // //recuperation d'attributs html
 // const logo = document.querySelector('.nav__logo');
@@ -109,4 +134,3 @@ h1.onmouseenter = function (e) {
 //  logo.classList.add('a','b')
 //  logo.classList.remove('a')
 //  logo.classList.toggle('b')
-//  logo.classList.contains('c')
