@@ -54,40 +54,23 @@ header.prepend(message);
 message.style.backgroundColor = '#37383d';
 message.style.width = '120%';
 
-//scroll smooth
-const btnScrollTo = document.querySelector('.btn--scroll-to');
-const section1 = document.querySelector('#section--1');
+// //scroll smooth
+// const btnScrollTo = document.querySelector('.btn--scroll-to');
+// const section1 = document.querySelector('#section--1');
 
-btnScrollTo.addEventListener('click', function (e) {
-  const s1Coord = section1.getBoundingClientRect();
-  console.log(s1Coord);
-  console.log(e.target.getBoundingClientRect);
-  console.log('currentScorll (X/Y)', window.pageXOffset, window.pageYOffset);
-  console.log(
-    'height/width wiewport',
-    document.documentElement.clientHeight,
-    document.documentElement.clientWidth
-  );
-});
-// window.scrollTo(
-//   s1Coord.left + window.pageXOffset ,
-//   s1Coord.top + window.pageYOffset,
-
-// );
-
-//////////////////////// GESTION DU SCROLL
-//   section1.scrollIntoView({ behavior: 'smooth' });
+// btnScrollTo.addEventListener('click', function (e) {
+// //////////////////////// GESTION DU SCROLL
+// section1.scrollIntoView({ behavior: 'smooth' });
 // });
 
-// const h1 = document.querySelector('h1');
-// h1.addEventListener('mouseenter', function (e) {
-//   alert('addEventListener: Great! you are reading the headding');
-// });
 
-// h1.onmouseenter = alertH1;
-// h1.onmouseenter = function (e) {
-//   alert('👍');
-// };
+//page navigation
+document.querySelector('.nav__links').addEventListener('click', function(e){
+  e.preventDefault()
+  if(e.target.classList.contains('nav__link')){
+    
+  }
+})
 
 ////// CHANGEMENT DE COULEUR SUR NOS LIENS
 //rgb(255,255,255)
@@ -100,16 +83,21 @@ console.log(randomColor());
 document.querySelector('.nav__link').addEventListener('click', function (e) {
   this.style.backgroundColor = randomColor();
   console.log('LINK', e.target);
+  console.log('currentTarget', e.currentTarget);
+
+  e.stopPropagation();
 });
 
 document.querySelector('.nav__links').addEventListener('click', function (e) {
-  this.backgroundColor = randomColor();
+  this.style.backgroundColor = randomColor();
   console.log('LINKS', e.target);
+  console.log('currentTarget', e.currentTarget);
 });
 
 document.querySelector('.nav').addEventListener('click', function (e) {
   this.style.backgroundColor = randomColor();
   console.log('NAV', e.target);
+  console.log('currentTarget', e.currentTarget);
 });
 
 //MANIPULATION DES ATTRIBUT CLASSE
