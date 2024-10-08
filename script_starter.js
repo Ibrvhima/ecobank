@@ -8,6 +8,12 @@ const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
 
+const tabs = document.querySelectorAll('.operations__tab');
+const tabsContainer = document.querySelector('.operations__tab-container');
+const tabsContent = document.querySelectorAll('.operations__content');
+
+const nav = document.querySelector('.nav')
+
 const openModal = function (e) {
   e.preventDefault();
   modal.classList.remove('hidden');
@@ -18,9 +24,6 @@ const closeModal = function () {
   modal.classList.add('hidden');
   overlay.classList.add('hidden');
 };
-
-// for (let i = 0; i < btnsOpenModal.length; i++)
-//   btnsOpenModal[i].addEventListener('click', openModal);
 
 btnsOpenModal.forEach(btnOpen => btnOpen.addEventListener('click', openModal));
 
@@ -33,92 +36,117 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
-console.log(document.documentElement);
+// Smooth scroll
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
 
-const header = document.querySelector('.header');
+btnScrollTo.addEventListener('click', function (e) {
+  e.preventDefault();
+  // const s1Coords = section1.getBoundingClientRect();
+  // // window.scrollTo(
+  // //   s1Coords.left + window.pageXOffset,
+  // //   s1Coords.top + window.pageYOffset
+  // // );
+  // window.scrollTo({
+  //   left: s1Coords.left + window.pageXOffset,
+  //   top: s1Coords.top + window.pageYOffset,
+  //   behavior: 'smooth'
+  // })
 
-// recuperation d'une classe par son nom
-//document.getElementsByClassName('.btn');
+  section1.scrollIntoView({ behavior: 'smooth' });
+});
 
-//creation et insertion  d'element dans le HTML
+// const h1 = document.querySelector('h1')
+// const alertH1 = function(e){
+//   e.preventDefault()
+//   alert('AddEventListerner: Great ! You are reading the heading 😊')
+// }
+// h1.addEventListener('mouseenter', alertH1 )
 
-//insertAddjacentHTML
-const message = document.createElement('div');
-message.classList.add('cookie-message');
+// h1.onmouseenter = alertH1
 
-message.innerHTML = `
-We use cooki for imporved functionnality and analytics
-<button class="btn btn--close-cookie"> Got it! </button>
-`;
-header.prepend(message);
-message.style.backgroundColor = '#37383d';
-message.style.width = '120%';
+// const randomInt = (min, max) =>
+//   Math.floor(Math.random() * (max - min + 1) + min);
+// const randomColor = () =>
+//   `rgb(${randomInt(0, 255)}, ${randomInt(0, 255)}, ${randomInt(0, 255)})`;
 
-// //scroll smooth
-// const btnScrollTo = document.querySelector('.btn--scroll-to');
-// const section1 = document.querySelector('#section--1');
+// console.log(randomColor());
 
-// btnScrollTo.addEventListener('click', function (e) {
-// //////////////////////// GESTION DU SCROLL
-// section1.scrollIntoView({ behavior: 'smooth' });
+// document.querySelector('.nav__link').addEventListener('click', function (e) {
+//   this.style.backgroundColor = randomColor();
+//   console.log(this)
+// });
+// document.querySelector('.nav').addEventListener('click', function (e) {
+//   this.style.backgroundColor = randomColor();
+//   console.log(this)
 // });
 
+//// Page Navigation
 
-//page navigation
-document.querySelector('.nav__links').addEventListener('click', function(e){
-  e.preventDefault()
-  if(e.target.classList.contains('nav__link')){
-    
-  }
-})
+// document.querySelectorAll('.nav__link').forEach(function(el){
+//   el.addEventListener('click', function(e){
+//     e.preventDefault()
+//     const id = this.getAttribute('href')
+//     document.querySelector(id).scrollIntoView({behavior: 'smooth'})
+//   })
+// })
 
-////// CHANGEMENT DE COULEUR SUR NOS LIENS
-//rgb(255,255,255)
-const radomInt = (min, max) =>
-  Math.floor(Math.random() * (max - min + 1) + min);
-const randomColor = () =>
-  `rgb(${radomInt(0, 255)}, ${radomInt(0, 255)},${radomInt(0, 255)})`;
-console.log(randomColor());
-
-document.querySelector('.nav__link').addEventListener('click', function (e) {
-  this.style.backgroundColor = randomColor();
-  console.log('LINK', e.target);
-  console.log('currentTarget', e.currentTarget);
-
-  e.stopPropagation();
-});
+// 1. Add an event listener
 
 document.querySelector('.nav__links').addEventListener('click', function (e) {
-  this.style.backgroundColor = randomColor();
-  console.log('LINKS', e.target);
-  console.log('currentTarget', e.currentTarget);
+  e.preventDefault();
+  if (e.target.classList.contains('nav__link')) {
+    const id = e.target.getAttribute('href');
+    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+  }
 });
 
-document.querySelector('.nav').addEventListener('click', function (e) {
-  this.style.backgroundColor = randomColor();
-  console.log('NAV', e.target);
-  console.log('currentTarget', e.currentTarget);
+const h1 = document.querySelector('h1');
+
+// Downward : child
+console.log(h1.textContent);
+
+// Upward
+
+// Selecting sibling
+
+// Tabbed component
+
+
+
+tabsContainer.addEventListener('click', function (e) {
+  const clicked = e.target.closest('.operations__tab');
+  if (!clicked) return;
+  tabs.forEach(t => t.classList.remove('operations__tab--active'));
+  clicked.classList.add('operations__tab--active');
+
+  // Activation of content area
+  tabsContent.forEach(t => t.classList.remove('operations__content--active'))
+  document
+    .querySelector(`.operations__content--${clicked.dataset.tab}`)
+    .classList.add('operations__content--active');
 });
 
-//MANIPULATION DES ATTRIBUT CLASSE
+// Menu fade animation
 
-//document.documentElement.style.setProperty("--color-primary", "orange")
+const handleHover = function(e){
+  if(e.target.classList.contains('nav__link')){
+    const link = e.target
+    const siblings =  link.closest('.nav').querySelectorAll('.nav__link')
+    siblings.forEach(el => {
+      if(el !== link) el.style.opacity = this;
+    })
+  }
+}
+nav.addEventListener('mouseover',handleHover.bind(0.5))
+nav.addEventListener('mouseout',handleHover.bind(1))
 
-// //recuperation d'attributs html
-// const logo = document.querySelector('.nav__logo');
-// (logo.alt)
-// //(logo.src)
-// //(logo.className)
 
-// //transformation de la valeur de l'attribut
+// Sticky navigation 
+window.addEventListener('scroll', function(e){
+  if(window.scrollY > initialCoords.top) nav.classList.add('sticky')
+  else nav.classList.remove('sticky')
+})
 
-// logo.alt = "beautiful bleu  logo";
-// console.log(logo.getAttribute('className'));
-// console.log(logo.getAttribute('src'));
-// //data attribute
-//  console.log(logo.datasete.versionNumber);
-
-//  //classe
-//  logo.classList.add('a','b')
-//  logo.classList.remove('a')
-//  logo.classList.toggle('b')
+const initialCoords = section1.getBoundingClientRect()
+console.log(initialCoords)
